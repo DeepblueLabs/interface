@@ -3,6 +3,8 @@ import { Header } from '@/components/ui/Header';
 import { Container } from '@/components/ui/Container';
 import { HomepageHero } from '@/components/ui/sections/HomepageHero';
 
+// web3 components
+import { Authentication } from '@/components/web3/Authentication/Authentication';
 
 export default function Home() {
   return (
@@ -18,6 +20,7 @@ export default function Home() {
           <Header />
         </Container>
         <Container>
+          <Authentication />
           <HomepageHero />
         </Container>
       </main>
