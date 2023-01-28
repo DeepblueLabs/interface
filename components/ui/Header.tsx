@@ -1,11 +1,13 @@
 "use client";
 import Link from "next/link";
+import classNames from "classnames";
+import { Dialog } from "@headlessui/react";
 import { useState, useEffect } from "react";
+import { Logo } from "@/components/icons/Logo";
 import { Container } from "@/components/ui/Container";
 import { HamburgerIcon } from "@/components/icons/HamburgerIcon";
-import { Logo } from "@/components/icons/Logo";
-
-import classNames from "classnames";
+import Modal from "@/components/ui/Modal";
+import { Authentication } from "@/components/web3/Authentication/Authentication";
 
 export const Header = () => {
   const [hamburgerMenuIsOpen, setHamburgerMenuIsOpen] = useState(false);
@@ -57,10 +59,14 @@ export const Header = () => {
               )}
             >
               <li className="md:hidden lg:block">
-                <Link href="/" passHref>Home</Link>
+                <Link href="/" passHref>
+                  Home
+                </Link>
               </li>
               <li className="md:hidden lg:block">
-                <Link href="mint" passHref>Mint</Link>
+                <Link href="mint" passHref>
+                  Mint
+                </Link>
               </li>
               <li className="md:hidden lg:block">
                 <Link href="#about">About</Link>
@@ -71,13 +77,10 @@ export const Header = () => {
             </ul>
           </nav>
         </div>
-
         <div className="ml-auto h-full flex items-center">
-          <Link className="mr-6 text-sm hidden md:block" href="#">
-            <button>
-                <span className="">Connect Wallet</span>
-            </button>
-          </Link>
+          <Modal name="Wallet connect" title="Wallet selection" closeMessage="Cancel">
+              <Authentication />
+          </Modal>
         </div>
         <button
           className="ml-6 md:hidden"
