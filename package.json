@@ -1,6 +1,10 @@
 {
-  "name": "interface",
+  "name": "sharkpunks-interface",
   "version": "0.1.0",
+  "description": "SharkPunks Interface",
+  "main": "/pages/index.tsx",
+  "author": "Deepblue Labs",
+  "license": "GPL-3.0-or-later",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,15 +13,27 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@moralisweb3/next": "^2.12.0",
     "@next/font": "13.1.5",
     "@types/node": "18.11.18",
     "@types/react": "18.0.27",
     "@types/react-dom": "18.0.10",
+    "axios": "^1.2.5",
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.5",
-    "next": "13.1.5",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "4.9.4"
+    "ethers": "^5.7.2",
+    "moralis": "^2.12.0",
+    "next": "^13.1.5",
+    "next-auth": "^4.18.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "4.9.4",
+    "wagmi": "^0.11.0"
+  },
+  "devDependencies": {
+    "@moralisweb3/eslint-config": "^1.0.2",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.4"
   }
 }
