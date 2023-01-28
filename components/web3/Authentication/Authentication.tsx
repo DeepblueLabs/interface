@@ -11,7 +11,6 @@ import { Option } from "../Option";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/router";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
-import styles from "./Authentication.module.css";
 import { useAuthRequestChallengeEvm } from "@moralisweb3/next";
 
 const wallets = [
@@ -82,7 +81,7 @@ export const Authentication = () => {
       });
 
       // redirects to main page
-      push("/");
+      push("mint");
     } catch (e) {
       // Do nothing
     }

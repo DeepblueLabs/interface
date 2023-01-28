@@ -1,7 +1,6 @@
 {
     "spellright.documentTypes": [
-        "latex",
-        "plaintext"
+        "latex"
     ],
     "spellright.language": [
         "es"

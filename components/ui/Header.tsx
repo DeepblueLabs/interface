@@ -64,15 +64,15 @@ export const Header = () => {
                 </Link>
               </li>
               <li className="md:hidden lg:block">
-                <Link href="mint" passHref>
-                  Mint
-                </Link>
-              </li>
-              <li className="md:hidden lg:block">
                 <Link href="#about">About</Link>
               </li>
               <li className="md:hidden lg:block">
                 <Link href="#roadmap">Roadmap</Link>
+              </li>
+              <li className="md:hidden lg:block">
+                <Link href="mint" passHref>
+                  Mint
+                </Link>
               </li>
             </ul>
           </nav>
