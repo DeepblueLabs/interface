@@ -7,6 +7,11 @@
         --navigation-height: 4.8rem;
     }
 
+    ::selection {
+        background-color: rgba(130, 238, 253, 0.3);
+        color: #1f2937;
+    }
+
     html {
         @apply:bg-background font-sans text-grey-dark;
     }
