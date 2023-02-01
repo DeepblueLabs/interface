@@ -5,7 +5,7 @@ export default function Document() {
     <Html lang="en">
       <Head />
       <div className="overflow-hidden pb-[16.4rem] md:pb-[25.6rem]">
-        <body>
+        <body className="bg-background">
           <Main />
           <NextScript />
         </body>

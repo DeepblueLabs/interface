@@ -13,7 +13,7 @@
     }
 
     html {
-        @apply:bg-background font-sans text-grey-dark;
+        @apply:bg-background font-mono text-off-white;
     }
 }
 

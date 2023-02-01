@@ -1,10 +1,9 @@
-import Head from 'next/head';
-import { Header } from '@/components/ui/Header';
-import { Container } from '@/components/ui/Container';
-import { HomepageHero } from '@/components/ui/sections/HomepageHero';
-
-// web3 components
-import { Authentication } from '@/components/web3/Authentication/Authentication';
+import Head from "next/head";
+import { Container } from "@/components/ui/Container";
+import { HomeNavbar } from "@/components/ui/HeaderHome";
+import { HeroImage } from "@/components/ui/HeroImage";
+import { Welcomepage } from "@/components/ui/sections/Welcomepage";
+import { Footer } from "@/components/ui/Footer";
 
 export default function Home() {
   return (
@@ -16,13 +15,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        <HomeNavbar />
+        <HeroImage />
         <Container>
-          <Header />
+          <Welcomepage />
         </Container>
-        <Container>
-          <HomepageHero />
-        </Container>
+        <Footer />
       </main>
     </>
-  )
+  );
 }

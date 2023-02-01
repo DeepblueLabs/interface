@@ -30,11 +30,11 @@ export const Header = () => {
   }, [setHamburgerMenuIsOpen]);
 
   return (
-    <header className="fixed top-0 left-0 z-10 w-full border-b border-transparent-white backdrop-blur-[12px]">
+    <header className="fixed top-0 left-0 z-10 w-full border-b border-transparent-black backdrop-blur-[12px]">
       <Container className="flex h-navigation-height">
         <Link className="flex items-center text-md font-mono" href="/">
           <Logo className="w-[2.4rem] h-[2.4rem] mr-4" />
-          <span className="font-mono ml-4">SharkPunks</span>
+          <span className="font-mono ml-4 text-off-white">SharkPunks</span>
         </Link>
 
         <div
@@ -45,7 +45,7 @@ export const Header = () => {
         >
           <nav
             className={classNames(
-              "fixed top-navigation-height left-0 h-[calc(100vh_-_var(--navigation-height))] w-full overflow-auto bg-background transition-opacity duration-500 md:relative md:top-0 md:block md:h-auto md:w-auto md:translate-x-0 md:overflow-hidden md:bg-transparent md:opacity-100 md:transition-none",
+              "fixed top-navigation-height left-0 h-[calc(100vh_-_var(--navigation-height))] w-full overflow-auto bg-background text-off-white font-mono transition-opacity duration-500 md:relative md:top-0 md:block md:h-auto md:w-auto md:translate-x-0 md:overflow-hidden md:bg-transparent md:opacity-100 md:transition-none",
               hamburgerMenuIsOpen
                 ? "translate-x-0 opacity-100"
                 : "translate-x-[-100vw] opacity-0"
@@ -77,7 +77,7 @@ export const Header = () => {
             </ul>
           </nav>
         </div>
-        <div className="ml-auto h-full flex items-center">
+        <div className="ml-auto h-full  items-center">
           <Modal name="Wallet connect" title="Wallet selection" closeMessage="Cancel">
               <Authentication />
           </Modal>
