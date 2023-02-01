@@ -11,7 +11,7 @@ export const Welcomepage = () => {
         SharkPunks is a collection of 5000 randomly generated SharkPunks. <br />
         Each SharkPunk has a unique DNA and is individually generated and stored
         on the Ethereum blockchain. <br />
-        Discover the SharkPunks and their unique traits. Exclusive NFTs for Fundraising into Deepblue Labs
+        Exclusive NFTs for Fundraising into Deepblue Labs
       </WelcomeMessage>
       <WelcomeButton message="Enter to Sea" />
     </Welcome>
