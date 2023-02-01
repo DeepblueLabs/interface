@@ -13,7 +13,7 @@ export const Welcomepage = () => {
         on the Ethereum blockchain. <br />
         Exclusive NFTs for Fundraising into Deepblue Labs
       </WelcomeMessage>
-      <WelcomeButton message="Enter to Sea" />
+      <WelcomeButton message="Enter to Sea 🦈" />
     </Welcome>
   );
 };

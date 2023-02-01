@@ -21,6 +21,7 @@ export default function Home() {
           <Welcomepage />
         </Container>
       </main>
+      <Footer />
     </>
   );
 }

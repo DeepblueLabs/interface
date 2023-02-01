@@ -51,7 +51,7 @@ export const WelcomeButton = ({ message }: IButtonProps) => {
   return (
     // button with framer motion
     <>
-      <Link href="mint" passHref>
+      <Link href="home" passHref>
       <motion.button
         className={classNames(
           "items-center px-8 py-3 bg-mint-green hover:bg-blue-400 text-white rounded-lg shadow-md text-sm",
