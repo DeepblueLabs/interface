@@ -20,7 +20,6 @@ export default function Home() {
         <Container>
           <Welcomepage />
         </Container>
-        <Footer />
       </main>
     </>
   );
