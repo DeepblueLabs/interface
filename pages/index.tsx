@@ -5,7 +5,7 @@ import { HeroImage } from "@/components/ui/HeroImage";
 import { Welcomepage } from "@/components/ui/sections/Welcomepage";
 import { Footer } from "@/components/ui/Footer";
 
-export default function Home() {
+export default function Index() {
   return (
     <>
       <Head>

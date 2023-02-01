@@ -46,7 +46,7 @@ module.exports = {
     },
     backgroundImage: {
       "primary-gradient":
-        "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%)",
+        "linear-gradient(90deg, rgb(133, 219, 255) 0%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%)",
       "page-gradient":
         "radial-gradient(ellipse 80% 50% at 50% -20%,rgba(200, 255, 255 0.3), transparent)",
       "hero-gradient":
