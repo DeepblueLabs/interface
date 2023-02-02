@@ -10,8 +10,8 @@ export const footerLink = [
   {
     title: "Social",
     links: [
-      { title: "Twitter", href: "https://twitter.com/deepbluelabs" },
-      { title: "Medium", href: "https://medium.com/deepbluelabs" },
+      { title: "Twitter", href: "https://twitter.com/Deepblue_Labs" },
+      { title: "Medium", href: "https://deepbluelabs.medium.com/" },
       { title: "Github", href: "https://github.com/deepbluelabs" },
       { title: "Discord", href: "https://discord.gg/WKZtnCHrpy" },
     ],
