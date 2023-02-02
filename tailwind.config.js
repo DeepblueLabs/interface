@@ -129,5 +129,5 @@ module.exports = {
       zap: "zap 2250ms calc(var(--index) * 20ms) linear infinite",
     },
   },
-  plugins: [],
+  plugins: []
 };

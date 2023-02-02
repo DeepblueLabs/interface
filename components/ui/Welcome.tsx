@@ -19,6 +19,8 @@ interface IWelcomeMessageProps {
 
 interface IButtonProps {
   message: string;
+  href: string;
+  title?: string;
 }
 
 export const WelcomeTitle = ({ children }: IWelcomeTitleProps) => {
@@ -47,11 +49,11 @@ export const WelcomeMessage = ({ children }: IWelcomeMessageProps) => {
   );
 };
 
-export const WelcomeButton = ({ message }: IButtonProps) => {
+export const WelcomeButton = ({ message, href, title }: IButtonProps) => {
   return (
     // button with framer motion
     <>
-      <Link href="home" passHref>
+      <Link href={href} passHref title={title}>
       <motion.button
         className={classNames(
           "items-center px-8 py-3 bg-mint-green hover:bg-blue-400 text-white rounded-lg shadow-md text-sm",
