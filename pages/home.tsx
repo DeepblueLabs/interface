@@ -1,5 +1,7 @@
 import Head from "next/head";
 import { Header } from "@/components/ui/Header";
+import { BottomNavbar } from "@/components/ui/BottomNavbar";
+
 export default function Home() {
   return (
     <>
@@ -12,6 +14,7 @@ export default function Home() {
       <main>
         <Header />
       </main>
+      <BottomNavbar />
     </>
   );
 }

@@ -2,13 +2,12 @@
 import Link from "next/link";
 import classNames from "classnames";
 import { useState, useEffect } from "react";
-import { Logo } from "@/components/icons/Logo";
 import { Container } from "@/components/ui/Container";
-import { HamburgerIcon } from "@/components/icons/HamburgerIcon";
-import { Button } from "@/components/ui/Button";
 import { ConnectWallet } from "@/components/web3/ConnectWallet";
 import { Share_Tech_Mono } from "@next/font/google";
 const font = Share_Tech_Mono({ weight: ["400"], subsets: ["latin"] });
+
+import { navbarLinks } from "@/components/constants/navbarLinks";
 
 export const Header = () => {
   const [hamburgerMenuIsOpen, setHamburgerMenuIsOpen] = useState(false);
@@ -32,11 +31,10 @@ export const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 z-10 w-full border-b border-transparent-white backdrop-blur-[12px]">
-      <Container className={classNames("flex h-navigation-height")}>
+      <Container className="flex h-navigation-height">
         <Link className="flex items-center text-md font-mono" href="/" passHref>
-          <Logo className="w-[2.4rem] h-[2.4rem] mr-4" />
+          <span className={classNames(font.className, "text-off-white")}>SharkPunks</span>
         </Link>
-
         <div
           className={classNames(
             "transition-[visible] md:visible",
@@ -59,7 +57,24 @@ export const Header = () => {
                 hamburgerMenuIsOpen && "[&_a]:translate-y-0"
               )}
             >
-              <li className="md:hidden lg:block">
+              {navbarLinks.map((link) => (
+                <li key={link.href} className={classNames("md:hidden lg:block", font.className)}>
+                  <Link href={link.href} passHref>
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+        <div className="ml-auto h-full flex items-center">
+          <ConnectWallet />
+        </div>
+      </Container>
+    </header>
+  );
+};
+{/* <li className="md:hidden lg:block">
                 <Link href="/" passHref>
                   Home
                 </Link>
@@ -74,21 +89,4 @@ export const Header = () => {
                 <Link href="mint" passHref>
                   Mint
                 </Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div className="ml-auto md:hidde h-full flex items-center">
-          <ConnectWallet />
-        </div>
-        <button
-          className="ml-6 md:hidden"
-          onClick={() => setHamburgerMenuIsOpen((open) => !open)}
-        >
-          <span className="sr-only">Toggle menu</span>
-          <HamburgerIcon />
-        </button>
-      </Container>
-    </header>
-  );
-};
+              </li> */}
