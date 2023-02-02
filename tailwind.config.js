@@ -17,7 +17,7 @@ module.exports = {
       transparent: "transparent",
       black: "#171332",
       background: "#000",
-      "transparent-white": "rgba(255, 255, 255, 0.08)",
+      "transparent-white": "rgba(255, 255, 255, 0.4)",
       "transparent-black": "rgba(0, 0, 0, 0.08)",
       "off-white": "#EEE",
       "teal": "#2A5D67",

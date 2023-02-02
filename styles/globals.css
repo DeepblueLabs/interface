@@ -5,6 +5,7 @@
 @Layer base {
     :root {
         --navigation-height: 4.8rem;
+
     }
 
     ::selection {
