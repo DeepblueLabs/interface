@@ -1,6 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
-
+import { Button } from "@/components/ui/Button";
 interface IModalProps {
   name: string
   title: string;
@@ -21,7 +21,7 @@ export default function Modal ({ name, title, children, closeMessage }:IModalPro
 
   return (
     <>
-      <button onClick={openModal} className="bg-artic text-white font-mono px-2 py-2 rounded-lg">{name}</button>
+      <Button onClick={openModal} size={'small'} variant={'web3'}>{name}</Button>
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
           <Transition.Child
@@ -47,18 +47,18 @@ export default function Modal ({ name, title, children, closeMessage }:IModalPro
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all border border-transparent-white">
                   <Dialog.Title
                     as="h3"
-                    className="text-lg font-mono leading-6 text-gray-900"
+                    className="text-lg font-mono leading-6 text-gray-900 text-off-white"
                   >
                     { title }
                   </Dialog.Title>
                   { children }
-                  <div className="mt-2">
+                  <div className="mt-2 text-off-white">
                     <button
                       type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-mono text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      className="inline-flex justify-center rounded-md border border-transparent-white bg-blue-100 px-4 py-2 text-sm font-mono text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                       onClick={closeModal}
                     >
                       {closeMessage}

@@ -14,5 +14,9 @@ export const navbarLinks = [
     {
         name: 'Sharks',
         href: '/sharks'
+    },
+    {
+        name: 'Staking',
+        href: '/staking'
     }
 ]

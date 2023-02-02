@@ -5,46 +5,28 @@ import {
   useDisconnect,
   useSignMessage,
 } from "wagmi";
-import { InjectedConnector } from "wagmi/connectors/injected";
-import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { Option } from "../Option";
 import { signIn } from "next-auth/react";
+import { signOut } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 import { useAuthRequestChallengeEvm } from "@moralisweb3/next";
 
-const wallets = [
-  {
-    name: "Metamask",
-    logoPath: "/assets/wallets/metamask.svg",
-    connector: new MetaMaskConnector(),
-  },
-  {
-    name: "Coinbase Wallet",
-    logoPath: "/assets/wallets/coinbase.svg",
-    disabled: true,
-  },
-  {
-    name: "WalletConnect",
-    logoPath: "/assets/wallets/walletconnect.svg",
-    connector: new WalletConnectConnector({
-      options: {
-        rpc: [`https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`],
-      },
-    }),
-  },
-  {
-    name: "Injected",
-    logoPath: "/assets/wallets/eth.svg",
-    connector: new InjectedConnector(),
-  },
-];
+import { Button } from "@/components/ui/Button";
+import { ToastContainer, toast } from "react-toastify";
+import { wallets } from "@/components/constants/wallets";
+import { getEllipsisTxt } from "@/components/web3/utils/format";
+
+import { Share_Tech_Mono } from "@next/font/google";
+const font = Share_Tech_Mono({ weight: ["400"], subsets: ["latin"] });
+
 export const Authentication = () => {
   const { connectAsync } = useConnect();
   const { disconnectAsync } = useDisconnect();
   const { isConnected } = useAccount();
   const { signMessageAsync } = useSignMessage();
   const { push } = useRouter();
+  const { data } = useSession();
 
   const { requestChallengeAsync } = useAuthRequestChallengeEvm();
 
@@ -83,8 +65,23 @@ export const Authentication = () => {
       // redirects to main page
       push("mint");
     } catch (e) {
-      // Do nothing
+      toast.error("Error connecting wallet", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+      <ToastContainer />;
     }
+  };
+  
+  const handleDisconnect = async () => {
+    await disconnectAsync();
+    signOut({ callbackUrl: "/home" });
   };
 
   return (
