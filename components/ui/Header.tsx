@@ -74,19 +74,3 @@ export const Header = () => {
     </header>
   );
 };
-{/* <li className="md:hidden lg:block">
-                <Link href="/" passHref>
-                  Home
-                </Link>
-              </li>
-              <li className="md:hidden lg:block">
-                <Link href="#about">About</Link>
-              </li>
-              <li className="md:hidden lg:block">
-                <Link href="#roadmap">Roadmap</Link>
-              </li>
-              <li className="md:hidden lg:block">
-                <Link href="mint" passHref>
-                  Mint
-                </Link>
-              </li> */}

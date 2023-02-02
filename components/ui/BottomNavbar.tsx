@@ -27,13 +27,3 @@ export const BottomNavbar = () => {
     </div>
   );
 };
-
-{
-  /* <div
-  className={`flex items-center px-3 py-2 rounded-full text-sm font-medium text-off-white bg-${
-    selectedTab === "home" ? "blue-500" : "gray-300"
-  } hover:bg-blue-500 hover:text-mint-green focus:outline-none focus:shadow-outline`}
-  onClick={() => setSelectedTab("home")}
->
-</div> */
-}
