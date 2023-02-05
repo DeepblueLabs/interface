@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require("tailwindcss/colors");
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
@@ -17,7 +18,7 @@ module.exports = {
       transparent: "transparent",
       black: "#171332",
       background: "#000",
-      "transparent-white": "rgba(255, 255, 255, 0.08)",
+      "transparent-white": "rgba(255, 255, 255, 0.4)",
       "transparent-black": "rgba(0, 0, 0, 0.08)",
       "off-white": "#EEE",
       "teal": "#2A5D67",
@@ -25,6 +26,7 @@ module.exports = {
       "artic": "#004170 ",
       "grey-dark": "#222326",
       "primary-text": "#EEE",
+      "gray-100": "#F7FAFC",
     },
     spacing: {
       0: "0",

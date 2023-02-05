@@ -68,6 +68,7 @@ export const WelcomeButton = ({ message, href, title }: IButtonProps) => {
     </>
   );
 };
+
 export const Welcome = ({ children }: IHeroProps) => {
   return (
     <div className="relative">

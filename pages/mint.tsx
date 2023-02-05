@@ -1,28 +1,33 @@
-import Link from "next/link";
-import { signOut } from "next-auth/react";
+import Head from "next/head";
+import { Header } from "@/components/ui/Header";
+import { Footer } from "@/components/ui/Footer";
+import { BottomNavbar } from "@/components/ui/BottomNavbar";
 import { GetServerSideProps } from "next";
 import { authOptions } from "./api/auth/[...nextauth]";
 import { unstable_getServerSession } from "next-auth/next";
-import type { NextPage } from "next";
 
-// Moralis EVM API
-import abi from "@/config/abi.json";
+import { Mintpage } from "@/components/ui/sections/Mintpage";
 
-const Mint: NextPage<{ user: string }> = ({ user }) => {
-
+export default function Mint() {
   return (
     <>
-      <h4>User session:</h4>
-      <pre>{JSON.stringify(user, null, 2)}</pre>
-      <button onClick={() => signOut({ callbackUrl: "/login" })}>
-        Sign out
-      </button>
-      <Link href={"/"}>Home</Link>
-      <h4>TotalSupply SharkPunks V2</h4>
-      <pre>{JSON.stringify(abi)}</pre>
+      <Head>
+        <title>SharkPunks | interface</title>
+        <meta name="description" content="SharkPunks home page" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Header />
+      <main className="bg-page-gradient pt-navigation-height">
+        <div className="overflow-hidden pb-[16.4rem] md:pb-[25.6rem]">
+          <Mintpage />
+        </div>
+      </main>
+      <BottomNavbar />
+      <Footer />
     </>
   );
-};
+}
 
 // gets the session from the server
 export const getServerSideProps: GetServerSideProps = async (context) => {
@@ -47,5 +52,3 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     },
   };
 };
-
-export default Mint;
