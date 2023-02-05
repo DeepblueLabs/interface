@@ -47,7 +47,7 @@ export const Welcomepage = () => {
           Exclusive NFTs for Fundraising into Deepblue Labs
         </WelcomeMessage>
         <ArrowLongDownIcon className="animate-bounce w-5 h-5 text-off-white mb-2" />
-        <WelcomeButton message="Enter to Sea 🦈 | comming soon" href="#CommingSoon" title="Comming soon"/>
+        <WelcomeButton message="Enter to Sea 🦈" href="home" title="SharkPunks Home"/>
       </Welcome>
     </motion.div>
   );
