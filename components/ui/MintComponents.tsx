@@ -55,13 +55,10 @@ export const MintImage = ({ children, className }: IMintElementProps) => {
 
 export const MintOptions = ({ children, className }: IMintElementProps) => {
   return (
-    <div
-      className={classNames(
-        className,
-        "flex flex-col sm:flex-row justify-between items-center border border-transparent-white rounded-lg"
-      )}
-    >
-      {children}
+    <div className="w-full md:w-1/2 p-3">
+      <div className="flex w-full h-full border border-teal">
+        {children}
+      </div>
     </div>
   );
 };

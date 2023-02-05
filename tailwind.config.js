@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require("tailwindcss/colors");
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
@@ -25,6 +26,7 @@ module.exports = {
       "artic": "#004170 ",
       "grey-dark": "#222326",
       "primary-text": "#EEE",
+      "gray-100": "#F7FAFC",
     },
     spacing: {
       0: "0",
