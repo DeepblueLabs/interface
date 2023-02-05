@@ -1,17 +1,17 @@
 import Image from "next/image";
-import { MintSection } from "@/components/ui/MintComponents";
+import { MintButton, MintSection } from "@/components/ui/MintComponents";
+import { MintSubSection } from "@/components/ui/MintComponents";
 import { MintTitle } from "@/components/ui/MintComponents";
 import { MintDescription } from "@/components/ui/MintComponents";
 import { MintImage } from "@/components/ui/MintComponents";
-import { MintOptions } from "@/components/ui/MintComponents";
-
+import { MintAmount } from "@/components/ui/MintComponents";
+import { MintOptionHeader } from "@/components/ui/MintComponents";
+import { MintOptionBody } from "@/components/ui/MintComponents";
+import { MintPriceNFT } from "@/components/ui/MintComponents";
+import { MintPriceTotal } from "@/components/ui/MintComponents";
 import { motion } from "framer-motion";
 
 import { Share_Tech_Mono } from "@next/font/google";
-import classNames from "classnames";
-
-import { TwitterIcon } from "@/components/icons/TwitterIcon";
-
 const font = Share_Tech_Mono({ subsets: ["latin"], weight: ["400"] });
 
 export const Mintpage = () => {
@@ -23,7 +23,7 @@ export const Mintpage = () => {
         utility holders and their respective minting limits.
       </MintDescription>
       <div className="flex flex-wrap">
-        <div className="w-full md:w-1/2 sm:w-full p-3">
+        <MintSubSection>
           <MintImage>
             <Image
               src="/nft/img/7.png"
@@ -34,93 +34,43 @@ export const Mintpage = () => {
               priority={true}
             />
           </MintImage>
-        </div>
-        <MintOptions className="md:w-1/2 sm:w-full">
-          <div className="rounded-lg shadow-md w-full h-full">
-            <div className="px-6 py-4 border-b border-transparent-white">
-              <div className="text-lg text-off-white">
-                <h2 className={classNames(font.className, "text-2xl")}>
-                  Genesis mint
-                </h2>
-              </div>
-              <p
-                className={classNames(font.className, "text-md text-off-white")}
-              >
-                SharkPunks: 5000/5000
-              </p>
-            </div>
+        </MintSubSection>
+        <MintSubSection>
+          <div className="border border-teal">
+            <MintOptionHeader title="Genesis mint" remaining={5000} />
             <div className="px-6 py-4">
-              <section className="flex items-center justify-between">
-                <h3
-                  className={classNames(
-                    font.className,
-                    "text-md text-off-white"
-                  )}
-                >
-                  Amount to mint
-                </h3>
-                <p
-                  className={classNames(
-                    font.className,
-                    "text-xl text-off-white"
-                  )}
-                >
-                  2
-                </p>
-              </section>
-              <section className="mt-4 flex items-center justify-between">
-                <h3
-                  className={classNames(
-                    font.className,
-                    "text-md text-off-white"
-                  )}
-                >
-                  Price per NFT
-                </h3>
-                <p
-                  className={classNames(
-                    font.className,
-                    "text-xl text-off-white"
-                  )}
-                >
-                  0.01 ETH
-                </p>
-              </section>
-              <section className="mt-4 flex items-center justify-between">
-                <h3
-                  className={classNames(
-                    font.className,
-                    "text-md text-off-white"
-                  )}
-                >
-                  Total price
-                </h3>
-                <p
-                  className={classNames(
-                    font.className,
-                    "text-xl text-off-white"
-                  )}
-                >
-                  0.04 ETH
-                </p>
-              </section>
+              <MintOptionBody>
+                <MintAmount amount={2} />
+              </MintOptionBody>
+              <MintOptionBody>
+                <MintPriceNFT price={0.01} />
+              </MintOptionBody>
+              <MintOptionBody>
+                <MintPriceTotal price={0.02} />
+              </MintOptionBody>
               <motion.hr
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 0.5 }}
                 className="my-4 border-t-2 border-off-white opacity-25"
               />
-              <section className="mt-4 flex items-center justify-between">
-                <div className="flex items-center text-off-white">
-                  <TwitterIcon />
-                </div>
-                <button className="bg-transparent text-off-white border border-off-white py-2 px-4 rounded-lg">
-                  Mint
-                </button>
-              </section>
+              <MintOptionBody>
+                <MintButton />
+              </MintOptionBody>
             </div>
           </div>
-        </MintOptions>
+          <div>
+            <div className="border border-teal text-off-white">
+              <div className="px-6 py-4">
+                <div className="flex items-center">
+                  <div className="flex-shrink-0">
+                    <h1 className={font.className}>Testnet phase</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </MintSubSection>
       </div>
     </MintSection>
   );
