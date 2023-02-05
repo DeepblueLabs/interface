@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { Header } from "@/components/ui/Header";
+import { Footer } from "@/components/ui/Footer";
 import { BottomNavbar } from "@/components/ui/BottomNavbar";
 import { GetServerSideProps } from "next";
 import { authOptions } from "./api/auth/[...nextauth]";
@@ -23,6 +24,7 @@ export default function Mint() {
         </div>
       </main>
       <BottomNavbar />
+      <Footer />
     </>
   );
 }
