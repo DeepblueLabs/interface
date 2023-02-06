@@ -19,12 +19,12 @@ export default function Mint() {
       </Head>
       <Header />
       <main className="bg-page-gradient pt-navigation-height">
-        <div className="overflow-hidden pb-[16.4rem] md:pb-[25.6rem]">
+        <div className="overflow-hidden">
           <Mintpage />
         </div>
+        <Footer />
       </main>
       <BottomNavbar />
-      <Footer />
     </>
   );
 }
