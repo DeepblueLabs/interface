@@ -1,4 +1,12 @@
 import React from "react";
+import { useEffect, useState } from "react";
+
+// Web3 provider
+import { ethers } from "ethers";
+import { contractAbi, contractAddress } from "@/config/contract";
+import { useContractWrite, usePrepareContractWrite } from "wagmi";
+import { useWaitForTransaction } from "wagmi";
+
 import classNames from "classnames";
 import { TwitterIcon } from "@/components/icons/TwitterIcon";
 import { Share_Tech_Mono } from "@next/font/google";
@@ -87,7 +95,11 @@ export const MintSection = ({ children }: IMintProps) => {
 };
 
 export const MintSubSection = ({ children, className }: IMintElementProps) => {
-  return <div className={classNames("w-full md:w-1/2 sm:w-full p-3", className)}>{children}</div>;
+  return (
+    <div className={classNames("w-full md:w-1/2 sm:w-full p-3", className)}>
+      {children}
+    </div>
+  );
 };
 
 export const MintOptionHeader = ({ title, remaining }: IMintHeaderProps) => {
@@ -151,14 +163,54 @@ export const MintPriceTotal = ({ price }: IMintPriceNFTProps) => {
 };
 
 export const MintButton = () => {
+  const {
+    config,
+    error: prepareError,
+    isError: isPrepareError,
+  } = usePrepareContractWrite({
+    address: contractAddress,
+    abi: contractAbi,
+    functionName: "mintShark",
+    args: [1],
+    chainId: 5,
+    overrides: {
+      value: ethers.utils.parseEther("0.1"),
+    },
+  });
+
+  const { data, error, isError, write } = useContractWrite(config);
+
+  const { isLoading, isSuccess } = useWaitForTransaction({
+    hash: data?.hash,
+  });
+
   return (
     <>
       <div className="flex items-center text-off-white">
         <TwitterIcon />
       </div>
-      <button className="bg-transparent text-off-white border border-off-white py-2 px-4 rounded-lg">
-        Mint
+      <button
+        disabled={!write || isLoading}
+        onClick={() => write?.()}
+        className="bg-transparent text-off-white border border-off-white py-2 px-4 rounded-lg"
+      >
+        {isLoading ? "Minting..." : "Mint"}
       </button>
+      {isSuccess && (
+        <div className="text-off-white">
+          <p className="text-sm">Transaction successful!</p>
+          <div>
+            <a href={`https://goerli.etherscan.io/tx/${data?.hash}`}>
+              Etherscan
+            </a>
+          </div>
+        </div>
+      )}
+      {isPrepareError && isError && (
+        <div className="text-off-white">
+          <p className="text-sm">Error: {(prepareError || error)?.message}</p>
+        </div>
+      )}
     </>
   );
 };
