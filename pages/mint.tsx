@@ -6,7 +6,8 @@ import { GetServerSideProps } from "next";
 import { authOptions } from "./api/auth/[...nextauth]";
 import { unstable_getServerSession } from "next-auth/next";
 
-import { Mintpage } from "@/components/ui/sections/Mintpage";
+// import { Mintpage } from "@/components/ui/sections/Mintpage";
+import { SharkPunksMint } from "@/components/ui/sections/SharkPunksMint";
 
 export default function Mint() {
   return (
@@ -20,7 +21,7 @@ export default function Mint() {
       <Header />
       <main className="bg-page-gradient pt-navigation-height">
         <div className="overflow-hidden">
-          <Mintpage />
+          <SharkPunksMint />
         </div>
         <Footer />
       </main>
