@@ -16,6 +16,7 @@ export const MintTitle = ({ className }: IMintElementProps) => {
     address: contractAddress,
     abi: contractAbi,
     functionName: "name",
+    chainId: 5
   });
 
   const { data, error, isError, isLoading } = contractRead;

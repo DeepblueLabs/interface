@@ -7,6 +7,7 @@ import { MintOptionBody } from "@/components/web3/Mint/Section";
 import { MintOptionHeader } from "@/components/web3/Mint/Header";
 import { MintDescription } from "@/components/web3/Mint/Description";
 import { MintImage } from "@/components/web3/Mint/Image";
+import { Form } from "@/components/web3/Mint/Form";
 
 export const SharkPunksMint = () => {
   return (
@@ -23,8 +24,8 @@ export const SharkPunksMint = () => {
               <Image
                 src="/nft/img/7.png"
                 alt="NFT Image"
-                width={512}
-                height={512}
+                width={1024}
+                height={1024}
                 className="border border-teal"
                 priority={true}
               />
@@ -34,9 +35,7 @@ export const SharkPunksMint = () => {
             <div className="border border-teal">
                 <MintOptionHeader />
                 <div className="px-6 py-4">
-                    <MintOptionBody>
-                      
-                    </MintOptionBody>
+                  <Form />
                 </div>
             </div>
           </MintSubSection>

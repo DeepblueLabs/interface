@@ -19,11 +19,13 @@ export const MintOptionHeader = () => {
 				address: contractAddress,
 				abi: contractAbi,
 				functionName: "maxSupply",
+        chainId: 5
 			},
 			{
 				address: contractAddress,
 				abi: contractAbi,
 				functionName: "totalSupply",
+        chainId: 5
 			}
 		]
   });
@@ -39,12 +41,11 @@ export const MintOptionHeader = () => {
     }
   }, [data, error, isError, isLoading]);
 
-
   return (
     <div className="px-6 py-4 border-b border-transparent-white">
       <div className="text-lg text-off-white">
         <h2 className={classNames(font.className, "text-2xl")}>
-          Genesis SharkPunks
+          Genesis
         </h2>
       </div>
       <p className={classNames(font.className, "text-md text-off-white")}>
