@@ -123,7 +123,6 @@ export const Form = () => {
         className="my-4 border-t-2 border-off-white opacity-25"
       />
       <MintOptionBody>
-        
         <MintButton amount={amount} value={totalPrice}/>
       </MintOptionBody>
     </div>
