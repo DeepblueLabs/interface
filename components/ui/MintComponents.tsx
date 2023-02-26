@@ -10,6 +10,7 @@ import { useWaitForTransaction } from "wagmi";
 import classNames from "classnames";
 import { TwitterIcon } from "@/components/icons/TwitterIcon";
 import { Share_Tech_Mono } from "@next/font/google";
+
 const font = Share_Tech_Mono({ subsets: ["latin"], weight: ["400"] });
 interface IMintProps {
   children: React.ReactNode;

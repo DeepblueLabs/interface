@@ -8,6 +8,7 @@ import { MintOptionHeader } from "@/components/web3/Mint/Header";
 import { MintDescription } from "@/components/web3/Mint/Description";
 import { MintImage } from "@/components/web3/Mint/Image";
 import { Form } from "@/components/web3/Mint/Form";
+import { CustomLocalLoader } from "../ImageLoader";
 
 export const SharkPunksMint = () => {
   return (
@@ -28,6 +29,7 @@ export const SharkPunksMint = () => {
                 height={1024}
                 className="border border-teal"
                 priority={true}
+                loader={CustomLocalLoader}
               />
             </MintImage>
           </MintSubSection>

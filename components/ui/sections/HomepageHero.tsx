@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CustomLocalLoader } from "@/components/ui/ImageLoader";
 import { Hero } from "@/components/ui/Hero";
 import { HeroButton } from "@/components/ui/Hero";
 import { HeroTitle, HeroSubtitle } from "@/components/ui/Hero";
@@ -21,6 +22,8 @@ export const HomepageHero = () => {
             alt="SharkPunks"
             width={1024}
             height={1024}
+            priority={true}
+            loader={CustomLocalLoader}
           >
           </Image>
         </HeroImage>

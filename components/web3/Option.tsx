@@ -1,6 +1,7 @@
 import { FC } from "react";
 import Image from "next/image";
 import styles from "./Option.module.css";
+import { CustomLocalLoader } from "../ui/ImageLoader";
 
 export interface IOption {
   name: string;
@@ -16,7 +17,7 @@ export const Option: FC<IOption> = ({ name, logoPath, onClick, disabled }) => {
       onClick={onClick}
     >
       <div className={styles.info}>
-        <Image src={logoPath} alt={name} width={40} height={40} />
+        <Image src={logoPath} alt={name} width={40} height={40} loader={CustomLocalLoader} />
         <span className={styles.name}>{name}</span>
       </div>
       <Image
@@ -24,6 +25,7 @@ export const Option: FC<IOption> = ({ name, logoPath, onClick, disabled }) => {
         alt="chevronRight"
         width={24}
         height={24}
+        loader={CustomLocalLoader}
       />
     </div>
   );

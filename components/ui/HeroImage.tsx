@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CustomLocalLoader } from "@/components/ui/ImageLoader";
 
 export const HeroImage = () => {
   return (
@@ -13,6 +14,7 @@ export const HeroImage = () => {
               height={2048}
               priority={true}
               className=""
+              loader={CustomLocalLoader}
             />
           </div>
         </div>

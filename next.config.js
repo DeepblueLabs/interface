@@ -2,8 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    loader: 'custom',
-    path: 'https://ipfs.moralis.io'
+    loader: 'custom'
   },
 };
 

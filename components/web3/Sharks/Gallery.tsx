@@ -1,8 +1,8 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import Image, { ImageLoader } from "next/image";
+import { useState } from "react";
+import Image from "next/image";
+import { CustomLoaderNFT } from "@/components/ui/ImageLoader";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { motion } from "framer-motion";
 import { useEvmContractNFTs } from "@moralisweb3/next";
 import { contractAddress } from "@/config/contract";
 import classNames from "classnames";
@@ -12,24 +12,15 @@ const font = Share_Tech_Mono({ subsets: ["latin"], weight: ["400"] });
 
 export const Gallery = () => {
   const [filter, setFilter] = useState("");
-  // set the image to the tokenUri or a placeholder
-  const [image, setImage] = useState("/nft/img/7.png");
 
-  const { data, cursor, page, pageSize, total, error, fetch, isFetching } =
-    useEvmContractNFTs({
-      address: contractAddress,
-      chain: 5, // 5 = Goerli
-    });
+  const { data, cursor, fetch } = useEvmContractNFTs({
+    address: contractAddress,
+    chain: 5
+  });
 
   const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFilter(e.target.value);
   };
-
-  console.log(data)
-
-  const customLoaderNFT: ImageLoader = ({ src }) => {
-    return `https://bafybeihqngv33elzpwrohscyxuduq3xx2zoy4wnjrbfyrtw52yeh2ylsn4.ipfs.nftstorage.link/${src}.png`;
-  }
 
   return (
     <div className="flex flex-col sm:flex-row w-full h-auto text-off-white px-1 lg:px-[12.0rem]">
@@ -70,7 +61,8 @@ export const Gallery = () => {
                 width={1024}
                 height={1024}
                 className="rounded-lg border border-teal"
-                loader={customLoaderNFT}
+                priority={true}
+                loader={CustomLoaderNFT}
               />
               <div className={font.className}>ς # {nft.tokenId}</div>
             </div>
