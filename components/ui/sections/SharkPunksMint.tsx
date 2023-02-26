@@ -3,12 +3,12 @@ import Image from "next/image";
 import { MintTitle } from "@/components/web3/Mint/Title";
 import { MintSection } from "@/components/web3/Mint/Section";
 import { MintSubSection } from "@/components/web3/Mint/Section";
-import { MintOptionBody } from "@/components/web3/Mint/Section";
 import { MintOptionHeader } from "@/components/web3/Mint/Header";
 import { MintDescription } from "@/components/web3/Mint/Description";
 import { MintImage } from "@/components/web3/Mint/Image";
 import { Form } from "@/components/web3/Mint/Form";
 import { CustomLocalLoader } from "../ImageLoader";
+import DisclosureComponent from "@/components/ui/Disclosure";
 
 export const SharkPunksMint = () => {
   return (
@@ -35,11 +35,12 @@ export const SharkPunksMint = () => {
           </MintSubSection>
           <MintSubSection>
             <div className="border border-teal">
-                <MintOptionHeader />
-                <div className="px-6 py-4">
-                  <Form />
-                </div>
+              <MintOptionHeader />
+              <div className="px-6 py-4">
+                <Form />
+              </div>
             </div>
+            <DisclosureComponent />
           </MintSubSection>
         </div>
       </MintSection>
