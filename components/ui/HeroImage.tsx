@@ -4,14 +4,14 @@ import { CustomLocalLoader } from "@/components/ui/ImageLoader";
 export const HeroImage = () => {
   return (
     <>
-      <div className="w-full mx-auto">
+      <div className="w-full mx-auto mt-0 text-center md:w-10/12 lg:w-[50%] lg:h-[50%] border-x border-mint-green">
         <div className="relative z-0 w-full lg:w-auto mt-8">
           <div className="relative overflow-hidden">
             <Image
-              src={"/bg/hero-image-4x.jpeg"}
+              src={"/bg/hero-image.png"}
               alt="SharkPunks City"
-              width={1600}
-              height={1000}
+              width={2048}
+              height={2048}
               priority={true}
               className=""
               loader={CustomLocalLoader}
