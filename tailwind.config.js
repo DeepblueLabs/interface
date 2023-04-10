@@ -27,6 +27,9 @@ module.exports = {
       "grey-dark": "#222326",
       "primary-text": "#EEE",
       "gray-100": "#F7FAFC",
+      // Custom colors
+      "yellow": "#ffb100",
+      "grey-custom": "#82b7be"
     },
     spacing: {
       0: "0",
