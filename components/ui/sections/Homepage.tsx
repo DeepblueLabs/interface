@@ -120,7 +120,7 @@ export const Homepage = () => {
             </div>
           </div>
           {/* Buy token container */}
-          <div className="flex flex-col md:flex-row justify-center items-center bg-teal">
+          <div className="flex flex-col md:flex-row justify-center items-center bg-teal rounded-md">
             <div className="w-full md:w-1/3 p-6">
               <h2 className="text-center text-xl font-bold mb-4 text-mint-green">
                 MINT A SHARKPUNK!
