@@ -5,8 +5,6 @@ import { BottomNavbar } from "@/components/ui/BottomNavbar";
 import { GetServerSideProps } from "next";
 import { authOptions } from "./api/auth/[...nextauth]";
 import { unstable_getServerSession } from "next-auth/next";
-
-// import { Mintpage } from "@/components/ui/sections/Mintpage";
 import { SharkPunksMint } from "@/components/ui/sections/SharkPunksMint";
 
 export default function Mint() {

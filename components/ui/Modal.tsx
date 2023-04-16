@@ -47,7 +47,7 @@ export default function Modal ({ name, title, children, closeMessage }:IModalPro
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all border border-transparent-white">
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-grey-dark p-6 text-left align-middle shadow-xl transition-all border border-transparent-white">
                   <Dialog.Title
                     as="h3"
                     className="text-lg font-mono leading-6 text-gray-900 text-off-white"
@@ -58,7 +58,7 @@ export default function Modal ({ name, title, children, closeMessage }:IModalPro
                   <div className="mt-2 text-off-white">
                     <button
                       type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent-white bg-blue-100 px-4 py-2 text-sm font-mono text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      className="inline-flex justify-center rounded-md border border-transparent-white bg-red px-4 py-2 text-sm font-mono text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                       onClick={closeModal}
                     >
                       {closeMessage}

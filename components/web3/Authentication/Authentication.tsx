@@ -14,10 +14,10 @@ import { useAuthRequestChallengeEvm } from "@moralisweb3/next";
 import { wallets } from "@/components/constants/wallets";
 
 import { ToastContainer, toast } from "react-toastify";
+import { Button } from "@/components/ui/Button";
 import { PowerIcon } from "@heroicons/react/20/solid";
 
 export const Disconnect = () => {
-
   const { disconnectAsync } = useDisconnect();
 
   const handleDisconnect = async () => {
@@ -26,9 +26,12 @@ export const Disconnect = () => {
   };
 
   return (
-    <PowerIcon className="h-3 w-3 ml-3 text-off-white" onClick={() => {handleDisconnect}}/>
-  )
-
+    <div>
+      <Button>
+        <PowerIcon className="h-3 w-3 ml-2" onClick={handleDisconnect}/>
+      </Button>
+    </div>
+  );
 };
 
 export const Authentication = () => {
@@ -88,21 +91,16 @@ export const Authentication = () => {
       <ToastContainer />;
     }
   };
-  
-  const handleDisconnect = async () => {
-    await disconnectAsync();
-    signOut({ callbackUrl: "/home" });
-  };
 
   return (
     <div className="items-center mt-4">
-      {wallets.map(({ name, logoPath, connector, disabled }) => (
+      {wallets.map(({ name, logoPath, connector }) => (
         <Option
-          disabled={disabled}
+          disabled={false}
           key={name}
           logoPath={logoPath}
           name={name}
-          onClick={() => handleAuth(connector, disabled)}
+          onClick={() => handleAuth(connector, false)}
         />
       ))}
     </div>

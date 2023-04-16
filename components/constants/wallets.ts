@@ -15,8 +15,7 @@ export const wallets = [
         options: {
           qrcode: false,
         }
-      }),
-      disabled: false
+      })
     },
     {
       name: "WalletConnect",

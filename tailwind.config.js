@@ -29,7 +29,8 @@ module.exports = {
       "gray-100": "#F7FAFC",
       // Custom colors
       "yellow": "#ffb100",
-      "grey-custom": "#82b7be"
+      "grey-custom": "#82b7be",
+      "red": "#E53935"
     },
     spacing: {
       0: "0",
