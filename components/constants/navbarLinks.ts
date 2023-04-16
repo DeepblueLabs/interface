@@ -5,7 +5,7 @@ export const navbarLinks = [
     },
     {
         name: 'Roadmap',
-        href: '/roadmap'
+        href: '/home#roadmap'
     },
     {
         name: 'Mint',

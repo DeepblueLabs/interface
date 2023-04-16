@@ -1,14 +1,12 @@
-import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { CustomLocalLoader } from "@/components/ui/ImageLoader";
-import { Button } from "@/components/ui/Button";
-import { Hero } from "@/components/ui/Hero";
-import { HeroButton } from "@/components/ui/Hero";
-import { HeroTitle, HeroSubtitle } from "@/components/ui/Hero";
-import { HeroImage } from "@/components/ui/HeroImage";
+
 import { Container } from "@/components/ui/Container";
 import { Share_Tech_Mono } from "@next/font/google";
+
+import { Roadmap } from "@/components/ui/Roadmap";
+import { Spliter } from "@/components/ui/Spliter";
 
 const font = Share_Tech_Mono({ subsets: ["latin"], weight: ["400"] });
 
@@ -152,12 +150,7 @@ export const Homepage = () => {
             </div>
           </div>
           {/* Split section */}
-          <motion.hr
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.5 }}
-            className="mt-8 border-t-2 border-off-white opacity-25"
-          />
+          <Spliter />
           {/* What is a unique collection? */}
           <div className="flex flex-col md:flex-row p-2 md:p-8">
             <div className="md:w-1/2 flex flex-col justify-center">
@@ -191,12 +184,7 @@ export const Homepage = () => {
               />
             </div>
           </div>
-          <motion.hr
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.5 }}
-            className="mt-8 border-t-2 border-off-white opacity-25"
-          />
+          <Spliter />
           {/* Welcome to Deepblue Labs and project associates */}
           <div className="container mx-auto px-4 py-8 md:flex md:flex-col md:items-left md:justify-center">
             {/* First row */}
@@ -220,7 +208,7 @@ export const Homepage = () => {
             <div className="grid grid-cols-1 md:grid-cols-5 gap-2">
               <div className="flex flex-col items-center">
                 <Image
-                  src="/nft/img/18.png"
+                  src="/nft/img/92.png"
                   alt="Image 1"
                   width={150}
                   height={100}
@@ -228,12 +216,12 @@ export const Homepage = () => {
                   loader={CustomLocalLoader}
                 />
                 <p className="text-off-white md:text-md mb-8">
-                  Image 1 description
+                  10,000 SharkPunks <br /> uniques <br />
                 </p>
               </div>
               <div className="flex flex-col items-center">
                 <Image
-                  src="/nft/img/18.png"
+                  src="/nft/img/16.png"
                   alt="Image 2"
                   width={150}
                   height={100}
@@ -241,12 +229,12 @@ export const Homepage = () => {
                   loader={CustomLocalLoader}
                 />
                 <p className="text-off-white md:text-md mb-8">
-                  Image 2 description
+                  All SharkPunks <br /> cost 0.01 ETH
                 </p>
               </div>
               <div className="flex flex-col items-center">
                 <Image
-                  src="/nft/img/18.png"
+                  src="/nft/img/86.png"
                   alt="Image 3"
                   width={150}
                   height={100}
@@ -254,12 +242,12 @@ export const Homepage = () => {
                   loader={CustomLocalLoader}
                 />
                 <p className="text-off-white md:text-md mb-8">
-                  Image 3 description
+                  Ownership and owner <br /> of the SharkPunk
                 </p>
               </div>
               <div className="flex flex-col items-center">
                 <Image
-                  src="/nft/img/18.png"
+                  src="/nft/img/79.png"
                   alt="Image 3"
                   width={150}
                   height={100}
@@ -267,12 +255,12 @@ export const Homepage = () => {
                   loader={CustomLocalLoader}
                 />
                 <p className="text-off-white md:text-md mb-8">
-                  Image 3 description
+                Your own PFP <br /> with your taste
                 </p>
               </div>
               <div className="flex flex-col items-center">
                 <Image
-                  src="/nft/img/18.png"
+                  src="/nft/img/71.png"
                   alt="Image 3"
                   width={150}
                   height={100}
@@ -280,110 +268,18 @@ export const Homepage = () => {
                   loader={CustomLocalLoader}
                 />
                 <p className="text-off-white md:text-md mb-8">
-                  Image 3 description
+                  Get aditional <br /> benefits
                 </p>
               </div>
             </div>
           </div>
-          <motion.hr
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.5 }}
-            className="mt-0 border-t-2 border-off-white opacity-25"
-          />
+          <Spliter />
           {/* Roadmap */}
-          <div className="container mx-auto px-4 py-8 md:flex md:flex-col md:items-left md:justify-center">
-            <div className="text-2xl lg:text-4xl mb-4 lg:mb-0">
-              <h2 className="text-mint-green">
-                ROADMAP ACTIVATIONS <br />
-                <span className="text-lg text-off-white">
-                  for a future with security and transparency ❤️
-                </span>
-              </h2>
-            </div>
-            {/* RoadmapItem */}
-            <div className="flex items-center justify-between mt-6">
-              <div className="flex items-center">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center font-medium text-mint-green">
-                  10%
-                </div>
-                <div className="ml-4">
-                  <h4 className="text-md italic text-off-white">
-                    We pay our moms.
-                  </h4>
-                </div>
-              </div>
-            </div>
-            <div className="flex items-center justify-between mt-2">
-              <div className="flex items-center">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center text-off-white font-medium">
-                  20%
-                </div>
-                <div className="ml-4">
-                  <h4 className="text-md italic text-off-white">
-                    5 SharkPunks will be released of which were withheld from
-                    sale for an airdrop 3 to holders and 2 to the community.
-                  </h4>
-                </div>
-              </div>
-            </div>
-            <div className="flex items-center justify-between mt-2">
-              <div className="flex items-center">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center text-off-white font-medium">
-                  40%
-                </div>
-                <div className="ml-4">
-                  <h4 className="text-md italic text-off-white">
-                    SKP starts the development of the luxury clothing brand.
-                  </h4>
-                </div>
-              </div>
-            </div>
-            <div className="flex items-center justify-between mt-2">
-              <div className="flex items-center">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center text-off-white font-medium">
-                  60%
-                </div>
-                <div className="ml-4">
-                  <h4 className="text-md italic text-off-white">
-                    SharkPunks holders have access to Blue Capital as angel.
-                    investors
-                  </h4>
-                </div>
-              </div>
-            </div>
-            <div className="flex items-center justify-between mt-2">
-              <div className="flex items-center">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center text-off-white font-medium">
-                  80%
-                </div>
-                <div className="ml-4">
-                  <h4 className="text-md italic text-off-white">
-                    The SharkPunk liquidity pool is initiated.
-                  </h4>
-                </div>
-              </div>
-            </div>
-            <div className="flex items-center justify-between mt-2">
-              <div className="flex items-center">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center text-off-white font-medium">
-                  100%
-                </div>
-                <div className="ml-4">
-                  <h4 className="text-md italic text-off-white">
-                    The Mutant SharkPunk (NFT Breeding) When the zombies reach
-                    the ocean.
-                  </h4>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Roadmap />
           {/* Verified Smart Contract */}
           <div className="flex justify-center items-center">
             <p className="text-center text-lg text-off-white">
-              <span>
-                VERIFIED SMART CONTRACT ADDRESS:
-              </span>
+              <span>VERIFIED SMART CONTRACT ADDRESS:</span>
               <a
                 href="https://goerli.etherscan.io/address/0xb262c4074ec5bd3bd08bf5ff027896c0992f480d"
                 className="text-mint-green underline"
