@@ -4,7 +4,7 @@
 import { ImageLoader } from "next/image";
 
 export const CustomLocalLoader: ImageLoader = ({ src, width, quality }) => {
-    return `https://deepbluelabs.sharkpunks.co${src}?w=${width}&q=${quality || 75}`;
+    return `https://ik.imagekit.io/fg4geoqzrz${src}?w=${width}&q=${quality || 75}`;
 }
 
 export const CustomLoaderNFT: ImageLoader = ({ src, width, quality }) => {
