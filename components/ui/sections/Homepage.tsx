@@ -229,7 +229,7 @@ export const Homepage = () => {
                   loader={CustomLocalLoader}
                 />
                 <p className="text-off-white md:text-md mb-8">
-                  All SharkPunks <br /> cost 0.01 ETH
+                  All SharkPunks <br /> cost 0.1 ETH
                 </p>
               </div>
               <div className="flex flex-col items-center">
