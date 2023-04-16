@@ -14,7 +14,7 @@ import { TwitterIcon } from "@/components/icons/TwitterIcon";
 
 interface IMintProps {
     amount: number;
-    value: string | "0.00";
+    value: string | "0.1";
 }
 
 export const MintButton = ({ amount, value }: IMintProps) => {
@@ -28,7 +28,7 @@ export const MintButton = ({ amount, value }: IMintProps) => {
     args: [debouncedAmount],
     chainId: 5,
     overrides: {
-      value: ethers.utils.parseEther(debouncedValue?.toString() || "0.00"),
+      value: ethers.utils.parseEther(debouncedValue?.toString() || "0.1"),
     },
   });
 
@@ -54,7 +54,7 @@ export const MintButton = ({ amount, value }: IMintProps) => {
         <div className="text-off-white">
           <p className="text-sm text-off-white">Transaction successful!</p>
           <div>
-            <a href={`https://goerli.etherscan.io/tx/${data?.hash}`}>
+            <a href={`https://goerli.etherscan.io/tx/${data?.hash}`} className="text-mint-green underline">
               Etherscan
             </a>
           </div>

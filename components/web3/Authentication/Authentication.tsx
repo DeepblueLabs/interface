@@ -5,20 +5,31 @@ import {
   useDisconnect,
   useSignMessage,
 } from "wagmi";
+
 import { Option } from "../Option";
+import { useRouter } from "next/router";
 import { signIn } from "next-auth/react";
 import { signOut } from "next-auth/react";
-import { useSession } from "next-auth/react";
-import { useRouter } from "next/router";
 import { useAuthRequestChallengeEvm } from "@moralisweb3/next";
-
-import { Button } from "@/components/ui/Button";
-import { ToastContainer, toast } from "react-toastify";
 import { wallets } from "@/components/constants/wallets";
-import { getEllipsisTxt } from "@/components/web3/utils/format";
 
-import { Share_Tech_Mono } from "@next/font/google";
-const font = Share_Tech_Mono({ weight: ["400"], subsets: ["latin"] });
+import { ToastContainer, toast } from "react-toastify";
+import { PowerIcon } from "@heroicons/react/20/solid";
+
+export const Disconnect = () => {
+
+  const { disconnectAsync } = useDisconnect();
+
+  const handleDisconnect = async () => {
+    await disconnectAsync();
+    signOut({ callbackUrl: "/home" });
+  };
+
+  return (
+    <PowerIcon className="h-3 w-3 ml-3 text-off-white" onClick={() => {handleDisconnect}}/>
+  )
+
+};
 
 export const Authentication = () => {
   const { connectAsync } = useConnect();
@@ -26,7 +37,6 @@ export const Authentication = () => {
   const { isConnected } = useAccount();
   const { signMessageAsync } = useSignMessage();
   const { push } = useRouter();
-  const { data } = useSession();
 
   const { requestChallengeAsync } = useAuthRequestChallengeEvm();
 

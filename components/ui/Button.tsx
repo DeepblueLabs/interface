@@ -18,7 +18,7 @@ const buttonClasses = cva(
           "bg-mint-green text-black hover:text-shadow hover:shadow-primary transition-[shadow, text-shadow]",
           "[&_.highlight]:ml-2",
         ],
-        secondary: "",
+        secondary: "bg-transparent border border-off-white text-off-white hover:bg-off-white hover:text-black transition-[bg, text]",
         tertiary: "",
         web3: "bg-mint-green text-black hover:text-shadow hover:shadow-primary transition-[shadow, text-shadow]",
       },

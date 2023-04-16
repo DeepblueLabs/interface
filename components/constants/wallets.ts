@@ -11,7 +11,12 @@ export const wallets = [
     {
       name: "Coinbase Wallet",
       logoPath: "/assets/wallets/coinbase.svg",
-      disabled: true,
+      connector: new WalletConnectConnector({
+        options: {
+          qrcode: false,
+        }
+      }),
+      disabled: false
     },
     {
       name: "WalletConnect",
@@ -19,12 +24,18 @@ export const wallets = [
       connector: new WalletConnectConnector({
         options: {
           rpc: [`https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`],
+          
         },
       }),
     },
     {
       name: "Injected",
       logoPath: "/assets/wallets/eth.svg",
-      connector: new InjectedConnector(),
+      connector: new InjectedConnector({
+        options: {
+          name: "SharkPunks",
+          shimDisconnect: true,
+        }
+      }),
     },
   ];

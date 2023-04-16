@@ -1,14 +1,15 @@
+import type { AppProps } from "next/app";
+import { SessionProvider } from "next-auth/react";
 import { createClient, configureChains, WagmiConfig } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
-import { SessionProvider } from "next-auth/react";
+import { infuraProvider } from "wagmi/providers/infura";
 import { mainnet, goerli } from "wagmi/chains";
 
 import "@/styles/globals.css";
-import type { AppProps } from "next/app";
 
 const { provider, webSocketProvider } = configureChains(
   [mainnet, goerli],
-  [publicProvider()]
+  [infuraProvider({ apiKey: process.env.INFURA_API_KEY }), publicProvider()]
 );
 
 const client = createClient({

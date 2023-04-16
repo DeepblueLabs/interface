@@ -3,7 +3,7 @@ import Modal from "@/components/ui/Modal";
 import { Button } from "@/components/ui/Button";
 import { useSession } from "next-auth/react";
 import { Authentication } from "@/components/web3/Authentication/Authentication";
-
+import { Disconnect } from "@/components/web3/Authentication/Authentication";
 import { getEllipsisTxt } from "@/components/web3/utils/format";
 import { Share_Tech_Mono } from "@next/font/google";
 import { useEvmNativeBalance } from "@moralisweb3/next";
@@ -36,6 +36,8 @@ export const ConnectWallet = () => {
             <span>{getEllipsisTxt(data.user.address, 6)}</span>
           </div>
         </Button>
+        {/* Disconnect button */}
+        <Disconnect />
       </>
     );
   }
