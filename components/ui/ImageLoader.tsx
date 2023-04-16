@@ -3,7 +3,7 @@
 
 import { ImageLoader } from "next/image";
 
-const CustomLocalLoader = ({ src, width, quality }) => {
+export const CustomLocalLoader = ({ src, width, quality }) => {
   if(src[0] === "/") src = src.slice(1);
   const params = [`w-${width}`];
   if (quality) {
